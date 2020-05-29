@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>bookings.outstationservices</title>
+		
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			form{
+				color: rgb(53, 52, 52);
+			}
+		</style>
+		
+	</head>
+	<body class="is-preload">
+
+	
+			<div id="page-wrapper">
+					<article id="main">
+						<header>
+							<h2 style ="text-align: center;">Book your Ride Now</h2>
+							<p style ="text-align: center;">Perfection Driving Towards you</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+								<div id = "form">
+									<h3>Please enter Your Pickup location :</h3> 
+								    <input type="text" id="pickup" style="background-color: rgba(68, 59, 59, 0.774);color: white;font-family: Verdana, Geneva, Tahoma, sans-serif;" >&nbsp;
+								    <h3>Please enter Your Drop location :</h3>
+								    <input type="text" id="drop" style="background-color: rgba(68, 59, 59, 0.774);color: white;font-family: Verdana, Geneva, Tahoma, sans-serif;" >&nbsp;
+								    <h3>time of departure :</h3>
+								    <input type="time" id="time" style="width:25%;padding:5px;background-color: rgba(68, 59, 59, 0.774);color: white;font-family: Verdana, Geneva, Tahoma, sans-serif;" >&nbsp;
+								    <br>
+								    <br>
+
+								    <center><button type="button" onclick="myfunction()" style="background-color:rgba(68, 59, 59, 0.774);color:black;font-family: Verdana, Geneva, Tahoma, sans-serif; width: 60%;border: 1px solid rgba(68, 59, 59, 0.774) ;border-radius: 3px;">Book Your Ride</button></center>
+							    </div> 
+							  		
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; SRIDHAR</li>
+						</ul>
+					</footer>
+
+			</div>
+		</body>
+	
+	<body>
+		<script>
+			function myfunction(){
+
+				var pick = document.getElementById("pickup").value;
+				var drop = document.getElementById("drop").value;
+				var time = document.getElementById("time").value;
+
+				if (pick == "" || time == "" || drop == ""){
+
+					if (pick == "" && time == "" && drop == ""){
+						document.getElementById("form").innerHTML="<h3>OOPS!!.We are Sorry." + "<br>"+ "Please fill everything to continue Further.</h3>";
+					}
+
+					else if (pick == "" && time == "" ){
+						document.getElementById("form").innerHTML="<h3>We are Sorry.<br>Please enter Pickup location and scheduling time to continue Further.</h3>";
+					}
+					else if(pick == "" && drop == ""){
+						document.getElementById("form").innerHTML="<h3>We are Sorry.<br>Please enter Pickup location and Drop location to continue Further.</h3>";
+					}
+					else if (drop == "" && time == ""){
+						document.getElementById("form").innerHTML="<h3>We are Sorry.<br>Please enter Drop location and Time of scheduling to continue Further.</h3>";
+					}
+
+					else if(pick == ""){
+						document.getElementById("form").innerHTML="<h3>We are Sorry.<br>Please enter Pickup location to continue Further.</h3>";
+					}
+					else if(time == ""){
+						document.getElementById("form").innerHTML="<h3>We are Sorry.<br>Please enter the scheduling Time to continue Further.</h3>";
+					}
+					else{
+						document.getElementById("form").innerHTML="<h3>We are Sorry.<br>Please enter the Drop location to continue Further.</h3>";
+					}
+				}
+				else{
+					document.getElementById("form").innerHTML="<h3>Your Cab to "+drop+" is Scheduled at "+time+".</h3>" + "<br>" + "<h3>Thanks for being With Us.</h3>"
+				}
+  
+            }
+
+		</script>
+	</body>	
+</html>
